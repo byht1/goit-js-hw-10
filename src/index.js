@@ -14,6 +14,9 @@ input.addEventListener(
   'input',
   debounce(() => {
     value = input.value.trim();
+    if (value === '') {
+      deleteContent();
+    }
     fetchCountries(value);
   }, DEBOUNCE_DELAY),
 );
